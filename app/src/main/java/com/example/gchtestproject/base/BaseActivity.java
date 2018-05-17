@@ -32,14 +32,14 @@ public class BaseActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT/*获取当前系统的SDK版本号*/ >= Build.VERSION_CODES.LOLLIPOP/*目前已知的SDK版本号的枚举类*/) {
             initenimate();
         }
-        myApp = (MyApp) getApplicationContext();
+        myApp = (MyApp) getApplicationContext();//不理解
         myApp.openActivity(this);
         initSp(); //初始化Sp
     }
 
     private void initSp() {
-        Utils.init(this);
-        spUtils = SPUtils.getInstance("TestProject");
+        Utils.init(this);//初始化工具类Utils
+        spUtils = SPUtils.getInstance("TestProject");//获取SPUtils 的实例，有些不理解？
     }
 
     public void dialogShow(String message) {
@@ -86,6 +86,12 @@ public class BaseActivity extends AppCompatActivity {
         }
         super.onResume();
     }
+
+    /**
+     * 验证用户权限
+     * @param grantResults
+     * @return
+     */
     public boolean verifyPermissions(String[] grantResults) {
         for (String result : grantResults) {
             if (ContextCompat.checkSelfPermission(this, result) != PackageManager.PERMISSION_GRANTED) {
@@ -100,6 +106,7 @@ public class BaseActivity extends AppCompatActivity {
                 "提示",
                 "当前应用缺少必要权限。请点击\"设置\"-\"权限\"-打开所需权限。",
                 "设置",
+                //点击了提示框设置的回调方法
                 "取消", new SystemDialogUtils.AfterClick() {
                     @Override
                     public void confirm() {
@@ -114,8 +121,8 @@ public class BaseActivity extends AppCompatActivity {
     private void startAppSettings() {
         Log.i("test111","无权限，且用户点击了设置");
 
-        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        intent.setData(Uri.parse("package:" + "gcg.testproject"));
-        startActivity(intent);
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);//跳转到设置界面，隐式意图
+        intent.setData(Uri.parse("package:" + "gcg.testproject"));//往意图里添加参数
+        startActivity(intent);//跳转到目标界面
     }
 }

@@ -25,9 +25,9 @@ public class ProgressDialog extends Dialog {
 
     public ProgressDialog(Context context) {
         super(context, R.style.AppTheme_Blue);
-        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
-        getWindow().setGravity(Gravity.CENTER);
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);//设置界面隐藏标题栏
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));//设置背景
+        getWindow().setGravity(Gravity.CENTER);//设置居中展示
         init();
     }
 

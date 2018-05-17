@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="theme_blue">#008df9</color>
+    <color name="divider">#eeeeee</color>
+    <color name="toast_color">#c5000000</color>
 </resources>
