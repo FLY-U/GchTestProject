@@ -28,8 +28,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//改变屏幕显示方式 横屏或者竖屏
+        if (Build.VERSION.SDK_INT/*获取当前系统的SDK版本号*/ >= Build.VERSION_CODES.LOLLIPOP/*目前已知的SDK版本号的枚举类*/) {
             initenimate();
         }
         myApp = (MyApp) getApplicationContext();
