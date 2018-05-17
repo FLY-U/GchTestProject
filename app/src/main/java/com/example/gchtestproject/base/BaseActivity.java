@@ -62,10 +62,11 @@ public class BaseActivity extends AppCompatActivity {
     //    Lollipop 中Activity和 Fragment的过渡动画是基于 Android一个叫作 Transition 的新特性实现的。
 //    初次引入这个特性是在 KitKat 中，Transition 框架提供了一个方便的 API 来构建应用中不同 UI 状态切换时的动画。
 //    这个框架始终围绕两个关键概念:场景和过渡。
-    private void initenimate() {
-        Object o = setenim(getWindow());
+    private void initenimate() {//这个方法设置的Activity的过渡动画，有时间好好研究一下。https://blog.csdn.net/xzy2046/article/details/41680199
+        Object o = setenim(getWindow());//
         if (o == null) {
-            Transition slide_left = null;
+            Transition slide_left = null;//Transition 框架提供了一个方便的 API 来构建应用中不同 UI 状态切换时的动画。
+//    这个框架始终围绕两个关键概念:场景和过渡。
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 slide_left = TransitionInflater.from(this).inflateTransition(android.R.transition.explode);
                 getWindow().setEnterTransition(slide_left);

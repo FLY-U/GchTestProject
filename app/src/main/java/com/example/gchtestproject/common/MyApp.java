@@ -24,17 +24,33 @@ public class MyApp extends Application {
         init();
     }
     private void init(){
-        Constants.init(this);
-        x.Ext.init(this);
+        Constants.init(this);//初始化文件路径和微信支付地址等参数方法
+        x.Ext.init(this);//初始化XUtils3模块，XUtils一共有4大功能：注解模块，网络模块，图片加载模块，数据库模块。
     }
+
+    /**
+     * 打开activity
+     * @param activity
+     */
     public void openActivity(BaseActivity activity){
         activitys.put(activity.getClass().getSimpleName(),activity);
     }
+
+    /**
+     * 关闭activity
+     * @param activityTAG
+     */
     public void closeActivity(String activityTAG) {
         BaseActivity baseActivity = activitys.get(activityTAG);
         baseActivity.finish();
         activitys.remove(activityTAG);
     }
+
+    /**
+     * 通过传入TAG获取activity
+     * @param TAG
+     * @return
+     */
     public BaseActivity getActivityByTAG(String TAG) {
         BaseActivity baseActivity = activitys.get(TAG);
         return baseActivity;
