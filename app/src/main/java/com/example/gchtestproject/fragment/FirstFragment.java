@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.gchtestproject.R;
 import com.example.gchtestproject.activity.banner.BannerActivity;
+import com.example.gchtestproject.activity.selectdate.SelectDateActivity;
 import com.example.gchtestproject.activity.selectphoto.SelectPhotoActivity;
 import com.example.gchtestproject.utils.MoveUtils;
 
@@ -104,6 +105,9 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener 
                 break;
             case R.id.tv_banner:
                 MoveUtils.go(getActivity(),BannerActivity.class);
+                break;
+            case R.id.tv_date:
+                MoveUtils.go(getActivity(),SelectDateActivity.class);
                 break;
         }
     }

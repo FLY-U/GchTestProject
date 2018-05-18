@@ -21,6 +21,7 @@
         <activity android:name=".activity.SplashAndGuide.GuideActivity"/>
         <activity android:name=".activity.banner.BannerActivity"/>
         <activity android:name=".activity.selectphoto.DaTuActivity"/>
+        <activity android:name=".activity.selectdate.SelectDateActivity"/>
     </application>
 
 </manifest>
