@@ -37,6 +37,11 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spalh);
+        //-----------------去掉标题栏--------------------------//
+        if (getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+        //-----------------去掉标题栏--------------------------//
         ButterKnife.bind(this);
         tvTime.setOnClickListener(this);
         timeCount.start();

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.gchtestproject.R;
+import com.example.gchtestproject.activity.banner.BannerActivity;
+import com.example.gchtestproject.activity.selectphoto.SelectPhotoActivity;
 import com.example.gchtestproject.utils.MoveUtils;
 
 import butterknife.BindView;
@@ -97,11 +99,16 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener 
         switch (view.getId()){
             case R.id.tv_select_photo:
                 MoveUtils.go(getActivity(),SelectPhotoActivity.class);
+            case R.id.tv_select_video:
+//                MoveUtils.go(getActivity(),SelectVideoActivity.class);
+                break;
+            case R.id.tv_banner:
+                MoveUtils.go(getActivity(),BannerActivity.class);
+                break;
         }
     }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
 }

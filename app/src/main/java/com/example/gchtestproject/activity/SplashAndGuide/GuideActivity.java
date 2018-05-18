@@ -42,6 +42,11 @@ public class GuideActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+        //-----------------去掉标题栏--------------------------//
+        if (getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+        //-----------------去掉标题栏--------------------------//
         ButterKnife.bind(this);
         initView();
         initIndicator(); //设置指示器

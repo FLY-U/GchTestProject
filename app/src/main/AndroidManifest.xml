@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gchtestproject">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".common.MyApp"
         android:allowBackup="true"
@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".MainActivity" android:launchMode="singleTask"/>
         <activity android:name=".activity.SplashAndGuide.GuideActivity"/>
+        <activity android:name=".activity.banner.BannerActivity"/>
+        <activity android:name=".activity.selectphoto.DaTuActivity"/>
     </application>
 
 </manifest>

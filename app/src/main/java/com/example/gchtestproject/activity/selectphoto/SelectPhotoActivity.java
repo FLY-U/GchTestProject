@@ -23,9 +23,13 @@ import com.example.gchtestproject.common.Word;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.GalleryFinal.OnHandlerResultCallback;
+import cn.finalteam.galleryfinal.model.PhotoInfo;
 
 public class SelectPhotoActivity extends BaseActivity {
     @BindView(R.id.gv_pics)
@@ -78,9 +82,9 @@ public class SelectPhotoActivity extends BaseActivity {
         }
     }
     private void showSelectPhotoDialog() {
-        SelectPhotoDialog dialog = new SelectPhotoDialog(size, SelectPhotoActivity.this, Word.REQUEST_CODE1, new GalleryFinal.OnHanlderResultCallback() {
+        SelectPhotoDialog dialog = new SelectPhotoDialog(size, SelectPhotoActivity.this, Word.REQUEST_CODE1, new GalleryFinal.OnHandlerResultCallback() {
             @Override
-            public void onHanlderSuccess(int reqeustCode, List<PhotoInfo> resultList) {
+            public void onHandlerSuccess(int requestCode, List<PhotoInfo> resultList) {
                 //拍照的回调
                 Log.i("test1", "onHanlderSuccess");
 
@@ -92,37 +96,37 @@ public class SelectPhotoActivity extends BaseActivity {
             }
 
             @Override
-            public void onHanlderFailure(int requestCode, String errorMsg) {
+            public void onHandlerFailure(int requestCode, String errorMsg) {
                 Log.i("test1", "onHanlderFailure");
             }
         });
         dialog.show();
     }
     //多选时的回调
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        //本地相册选择图片的回调
-        if (requestCode == Word.REQUEST_CODE1 && data != null) {
-            Log.i("test1", "多选回调111");
-
-            ArrayList<String> images = data.getStringArrayListExtra(ImageSelectorUtils.SELECT_RESULT);
-
-            pics.addAll(images);
-            Log.i("test1", "pics：" + pics.toString());
-
-            adapter.notifyDataSetChanged();
-        }
-        //删除图片的回调
-        if (requestCode == Word.REQUEST_CODE2 && data != null) {
-            Log.i("test", "删除回调111");
-
-            ArrayList<String> jieGuoUrl = data.getStringArrayListExtra("jieGuoUrl");
-            pics.clear();
-            pics.addAll(jieGuoUrl);
-            adapter.notifyDataSetChanged();
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        //本地相册选择图片的回调
+//        if (requestCode == Word.REQUEST_CODE1 && data != null) {
+//            Log.i("test1", "多选回调111");
+//
+//            ArrayList<String> images = data.getStringArrayListExtra(ImageSelectorUtils.SELECT_RESULT);
+//
+//            pics.addAll(images);
+//            Log.i("test1", "pics：" + pics.toString());
+//
+//            adapter.notifyDataSetChanged();
+//        }
+//        //删除图片的回调
+//        if (requestCode == Word.REQUEST_CODE2 && data != null) {
+//            Log.i("test", "删除回调111");
+//
+//            ArrayList<String> jieGuoUrl = data.getStringArrayListExtra("jieGuoUrl");
+//            pics.clear();
+//            pics.addAll(jieGuoUrl);
+//            adapter.notifyDataSetChanged();
+//        }
+//    }
     public class GridViewAdapter extends BaseAdapter{
         @Override
         public int getCount(){

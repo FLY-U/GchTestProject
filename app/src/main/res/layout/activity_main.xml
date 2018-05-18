@@ -13,15 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <include layout="@layout/top_layout"/>
+        <!--主屏幕部分-->
         <com.example.gchtestproject.widget.NoScrollViewPager
             android:id="@+id/v_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
+        <!--底部菜单上部的一根横线-->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#e4e4e8"/>
+        <!--四个Tab菜单-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp50">

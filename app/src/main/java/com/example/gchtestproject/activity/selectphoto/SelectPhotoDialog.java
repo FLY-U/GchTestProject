@@ -53,25 +53,25 @@ public class SelectPhotoDialog extends Dialog implements View.OnClickListener {
         btnCancle.setOnClickListener(this);//取消
     }
     //  需要依赖   compile 'cn.finalteam:galleryfinal:1.4.6'
-    private void camera() {
-        //设置主题
-        ThemeConfig theme = ThemeConfig.DEFAULT;
-        //配置功能
-        FunctionConfig functionConfig = new FunctionConfig.Builder()
-                .setEnableCamera(true)
-                .setEnableEdit(true)
-                .setEnableCrop(true)
-                .setEnableRotate(true)
-                .setCropSquare(true)
-                .setEnablePreview(true)
-                .build();
-        CoreConfig coreConfig = new CoreConfig.Builder(context, new GlideImageLoader(), theme)
-                .setFunctionConfig(functionConfig)
-                .setPauseOnScrollListener(new GlidePauseOnScrollListener(false, true))
-                .build();
-        GalleryFinal.init(coreConfig);
-        GalleryFinal.openCamera(requestCode, mcallback);
-    }
+//    private void camera() {
+//        //设置主题
+//        ThemeConfig theme = ThemeConfig.DEFAULT;
+//        //配置功能
+//        FunctionConfig functionConfig = new FunctionConfig.Builder()
+//                .setEnableCamera(true)
+//                .setEnableEdit(true)
+//                .setEnableCrop(true)
+//                .setEnableRotate(true)
+//                .setCropSquare(true)
+//                .setEnablePreview(true)
+//                .build();
+//        CoreConfig coreConfig = new CoreConfig.Builder(context, new GlideImageLoader(), theme)
+//                .setFunctionConfig(functionConfig)
+//                .setPauseOnScrollListener(new GlidePauseOnScrollListener(false, true))
+//                .build();
+//        GalleryFinal.init(coreConfig);
+//        GalleryFinal.openCamera(requestCode, mcallback);
+//    }
 
 
     @Override
@@ -81,7 +81,7 @@ public class SelectPhotoDialog extends Dialog implements View.OnClickListener {
                 dismiss();
                 break;
             case R.id.ll_take://照相机获取图片
-                camera();
+//                camera();
                 dismiss();
                 break;
             case R.id.tv_woman://本地相册获取图片
@@ -95,7 +95,7 @@ public class SelectPhotoDialog extends Dialog implements View.OnClickListener {
 //                }
                 Activity activity = (Activity) context;
                 //参数三：false_不是头像  true_是头像
-                ImageSelectorUtils.openPhoto(activity, requestCode, false, num);
+//                ImageSelectorUtils.openPhoto(activity, requestCode, false, num);
                 dismiss();
                 break;
         }
